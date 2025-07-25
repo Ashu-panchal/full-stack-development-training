@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+
+
+<body class="p-6 justify-center">
+
+    <div class="rounded-2xl shadow-lg p-8 max-w-xl mx-auto mt-10">
+        <h1 class="text-center text-2xl font-bold mb-5">My To-Do List</h1>
+
+        <div class="flex items-center space-x-2 mb-4">
+            <input type="search" placeholder="Add a new task...."
+                class="border rounded px-8 py-2 w-full max-w-sm ml-5 flex 1" />
+            <button class="bg-blue-500 text-white px-4 py-2 rounded">
+                Add
+            </button>
+        </div>
+
+
+        <div class="mb-6 mt-10">
+            <h1 class="mb-3">Task to complete</h2>
+                <ul class="list-none">
+                    <li class="flex">
+                        <input type="checkbox" class="mr-2"> Go to GYM
+                        <button class=" flex-auto text-red-600 font-bold text-xl ml-5">
+                            &times;
+                        </button>
+                    </li>
+                    <li class="flex">
+                        <input type="checkbox" class="mr-2"> Learn tailwind css
+                        <button class="flex-auto text-red-600 font-bold text-xl ml-5">
+                            &times;
+                        </button>
+                    </li>
+                    <li class="flex">
+                        <input type="checkbox" class="mr-2"> integrate to do list API
+                        <button class="flex-auto text-red-600 font-bold text-xl ml-5">
+                            &times;
+                        </button>
+                    </li>
+                    <li class="flex">
+                        <input type="checkbox" class="mr-2"> mild walk
+                        <button class="flex-auto text-red-600 font-bold text-xl ml-5">
+                            &times;
+                        </button>
+
+                    </li>
+
+                </ul>
+        </div>
+
+        <h3 class="text-xl font-semibold mb-2">Completed</h3>
+        <label class="block"><input type="checkbox" checked class="mr-2"> Go to GYM</label>
+        <label class="block"><input type="checkbox" checked class="mr-2">Learn Html</label>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\day4\\tailwind\\javascript\\program1.js"
+        },
+        {
+            "type": "chrome",
+            "name": "http://127.0.0.1:3000/Day 5/Html with javascript/page 2.html",
+            "request": "launch",
+            "url": "http://127.0.0.1:3000/Day 5/Html with javascript/page 2.html"
+        }
+    ]
+}
