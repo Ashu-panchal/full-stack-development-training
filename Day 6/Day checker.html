@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Day Finder</title>
+    <script>
+        // Internal JavaScript
+        function handleInput() {
+            // Input le rahe hain ID ke through
+            let dayNumber = parseInt(document.getElementById("age").value);
+
+            // Day category set karne ke liye variable
+            let yourCategory = "";
+
+            // Day number ke basis pe day ka naam dena
+            if (dayNumber == 1) {
+                yourCategory = "It's Sunday";
+            } else if (dayNumber == 2) {
+                yourCategory = "It's Monday";
+            } else if (dayNumber == 3) {
+                yourCategory = "It's Tuesday";
+            } else if (dayNumber == 4) {
+                yourCategory = "It's Wednesday";
+            } else if (dayNumber == 5) {
+                yourCategory = "It's Thursday";
+            } else if (dayNumber == 6) {
+                yourCategory = "It's Friday";
+            } else if (dayNumber == 7) {
+                yourCategory = "It's Saturday";
+            } else {
+                yourCategory = "Invalid input! Please enter a number between 1 and 7.";
+            }
+
+            // Output display kar rahe hain
+            document.getElementById("result").innerText = yourCategory;
+        }
+    </script>
+</head>
+
+<body>
+    <h1 style="background-color: rgb(129, 145, 175); padding: 50px; padding-left: 50px; text-align: center;">Days checker</h1><hr>
+    <div style="background-color: rgb(135, 174, 245); padding: 50px; padding-left: 50px; text-align: center;">
+    <label>Enter day number (1-7):</label>
+    <input type="number" id="age" placeholder="Enter day number">
+    <button onclick="handleInput()">Check</button>
+    </div>
+    <p id="result"></p>
+</body>
+
+</html>

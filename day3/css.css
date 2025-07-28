@@ -1,0 +1,53 @@
+* {
+    margin : 0;
+    padding : 0;
+}
+
+#navbar {
+    background-color : black;
+    color : white;
+    height : 60px;
+    padding-top : 17px;
+}
+
+div {
+    height : normal;
+    background-color: rgb(192, 210, 220);
+    border-width : 1px;
+    border-style : none;
+}
+
+p {
+    margin-left : 100px;
+    text-align: justify;
+    max-width : 1500px;
+}
+
+#image {
+    width : 400px;
+    height : 520px;
+    margin-right : 100px;
+    margin-left : 20px; 
+}
+
+a,input{
+    margin-left : 200px;
+    color : white;
+    text-decoration : none;
+}
+
+button{
+    background-color : rgb(214, 170, 59);
+}
+
+
+
+table{
+    background-color:rgb(179, 209, 254);
+    width : 600px;
+    height : 300px;
+    text-align : center;
+    border-radius : 14px;
+    margin : 0 auto;
+    border-width: 3px;
+}
