@@ -1,15 +1,18 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function Add() {
-  let [formData, setFormData] = useState({
+function Add({ todo, setTodo }) {
+  const [formData, setFormData] = useState({
     todoTitle: "",
     dueDate: "",
     todoStatus: ""
   });
 
+  const navigate = useNavigate();
+
   function handleChange(e) {
     let { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value
     }));
@@ -17,8 +20,21 @@ function Add() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    alert(`Added: ${formData.todoTitle}`);
-    setFormData({ todoTitle: "", dueDate: "", todoStatus: "" }); // clear form
+
+    // Create a new todo with unique ID
+    const newTodo = {
+      id: todo.length + 1,
+      ...formData
+    };
+
+    // Add new todo to the list
+    setTodo([...todo, newTodo]);
+
+    // Clear the form
+    setFormData({ todoTitle: "", dueDate: "", todoStatus: "" });
+
+    // Redirect to Show page
+    navigate("/Show");
   }
 
   return (
@@ -32,7 +48,7 @@ function Add() {
             type="text"
             name="todoTitle"
             value={formData.todoTitle}
-            onChange={(e) => handleChange(e)}
+            onChange={handleChange}
             className="w-full px-4 py-2 border border-gray-300 text-gray-600 rounded-md"
             required
           />
@@ -44,7 +60,7 @@ function Add() {
             type="date"
             name="dueDate"
             value={formData.dueDate}
-            onChange={(e) => handleChange(e)}
+            onChange={handleChange}
             className="w-full px-4 py-2 border border-gray-300 text-gray-600 rounded-md"
             required
           />
@@ -56,10 +72,9 @@ function Add() {
             type="text"
             name="todoStatus"
             value={formData.todoStatus}
-            onChange={(e) => handleChange(e)}
+            onChange={handleChange}
             className="w-full px-4 py-2 border border-gray-300 text-gray-600 rounded-md"
             placeholder="e.g., Pending"
-            disabled
           />
         </div>
 

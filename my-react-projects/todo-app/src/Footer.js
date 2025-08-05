@@ -1,3 +1,4 @@
+
 function Footer(){
     return(
        <footer class="bg-gray-200 text-gray-800 py-6 mt-10">

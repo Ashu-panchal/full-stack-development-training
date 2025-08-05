@@ -1,38 +1,27 @@
-import { Link } from 'react-router-dom';
+import {Link} from  'react-router-dom'
+function Header(){
+    return(
+    <header class="bg-gray-300 shadow">
+  <nav class="flex items-center justify-between ">
+  
+    <h2 class="text-2xl font-bold text-gray-800 p-2">My To-Do App</h2>
 
-function Header() {
-  return (
-    <header className="bg-gray-900 shadow-md">
-      <nav className="flex items-center justify-between px-6 py-4">
-        <h2 className="text-3xl font-extrabold text-white tracking-wide">
-          My To-Do App
-        </h2>
+ 
+    <div class="space-x-6">
+      <Link to="/Add">
+          <a href="#" class="text-gray-700 hover:text-blue-600 font-medium transition">Add</a>
+      </Link>
+      <Link to="/Show">
+           <a href="#" class="text-gray-700 hover:text-blue-600 font-medium transition">Show</a>
+      </Link>
+     <Link to="/Done">
+          <a href="#" class="text-gray-700 hover:text-blue-600 font-medium transition p-2">Done</a>
+     </Link>
+      
+    </div>
+  </nav>
+</header>
 
-        <div className="space-x-4">
-          <Link
-            to="/Add"
-            className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300"
-          >
-            Add
-          </Link>
-
-          <Link
-            to="/Show"
-            className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300"
-          >
-           Show
-          </Link>
-
-          <Link
-            to="/Done"
-            className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300"
-          >
-            ✅ Done
-          </Link>
-        </div>
-      </nav>
-    </header>
-  );
-}
-
-export { Header };
+    )
+};
+export {Header}

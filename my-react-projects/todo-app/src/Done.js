@@ -6,25 +6,25 @@ function Done() {
         <thead className="bg-gray-200">
           <tr>
             <th className="px-4 py-2 border">Todo Title</th>
-            <th className="px-4 py-2 border">Due Date</th>
-            <th className="px-4 py-2 border">Status</th>
+            <th className="px-4 py-2 border">Completed on</th>
+          
           </tr>
         </thead>
         <tbody>
           <tr className="text-center">
             <td className="border px-4 py-2">Dancing</td>
             <td className="border px-4 py-2">25-08-25</td>
-            <td className="border px-4 py-2">Completed</td>
+           
           </tr>
           <tr className="text-center">
             <td className="border px-4 py-2">Singing</td>
             <td className="border px-4 py-2">2-08-25</td>
-            <td className="border px-4 py-2">Completed</td>
+           
           </tr>
           <tr className="text-center">
             <td className="border px-4 py-2">Exercise</td>
             <td className="border px-4 py-2">5-08-25</td>
-            <td className="border px-4 py-2">Completed</td>
+         
           </tr>
         </tbody>
       </table>
