@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Header from "./Header";
 import Login from "./Login";
 import Footer from "./Footer";
-import CreateAccount from "./CreateAccount"; // ✅ fixed import
+import CreateAccount from "./CreateAccount"; 
 
 function App() {
   const [showLogin, setShowLogin] = useState(false);

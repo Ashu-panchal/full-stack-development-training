@@ -17,7 +17,7 @@ function Header({ onLoginClick, onCreateAccountClick }) {
         <div className="space-x-6">
           <button
             className="text-lg px-6 py-3 border border-black text-black rounded hover:bg-blue-600 hover:text-white hover:border-white transition duration-300"
-            onClick={onCreateAccountClick} // ✅ fixed
+            onClick={onCreateAccountClick} 
           >
             Create Account
           </button>
