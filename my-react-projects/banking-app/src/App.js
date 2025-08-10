@@ -20,7 +20,7 @@ function App() {
         <Header2
           isLoggedIn={true}
           onBankDetailsClick={() => setActiveSection("bank")}
-          onPayClick={() => setActiveSection("pay")}
+          onPayClick={() => setActiveSection("pay")}  // <-- Make sure this prop exists in Header2
         />
       ) : (
         <Header
