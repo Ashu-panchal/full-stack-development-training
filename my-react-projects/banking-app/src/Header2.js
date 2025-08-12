@@ -1,7 +1,7 @@
 function Header2({ isLoggedIn, onLoginClick, onCreateAccountClick, onBankDetailsClick, onPayClick }) {
   return (
     <header>
-      <nav className="flex justify-between px-9 py-8 bg-white/90 backdrop-blur-md fixed top-0 left-0 right-0 z-50">
+      <nav className="flex justify-between px-9 py-8 bg-white/90 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-3xl">
         {/* Logo */}
         <div
           className="text-5xl font-black cursor-pointer"
