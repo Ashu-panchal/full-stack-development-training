@@ -15,7 +15,7 @@ function Header() {
 
 
         <div className="flex items-center space-x-8 bg-white rounded-lg px-6 py-2 shadow">
-          <Link to="/Add" className="text-black hover:text-red-600 text-lg font-bold">
+          <Link to="/Add" className="text-black hover:text-blue-600 text-lg font-bold">
             Add
           </Link>
           <Link to="/Show" className="text-black hover:text-blue-600 text-lg font-bold">

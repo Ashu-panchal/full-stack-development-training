@@ -10,7 +10,12 @@ function App() {
   let [todo, setTodo] = useState([]);
 
   return (
-    <div class="flex flex-col min-h-screen justify-between">
+    <div class="flex flex-col min-h-screen justify-between"
+     style={{
+        backgroundImage:
+          "url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/8a97c0106861523.5f9994f295d27.jpg')",
+      }}>
+        
       <BrowserRouter>
         <Header />
         <Routes>
