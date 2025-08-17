@@ -16,9 +16,9 @@ function Show(props) {
 
   return (
     <div className="flex items-center justify-center min-h-screen">
-      <div className="w-[450px] h-[300px] bg-white/20 backdrop-blur-md rounded-3xl shadow-2xl mb-[170px] ml-[20px]">
+      <div className="w-[800px] h-[400px] bg-white/30 backdrop-blur-md rounded-3xl shadow-2xl mb-[170px] ml-[20px]">
         <h2 className="text-3xl font-extrabold mb-6 text-center text-white pt-[30px]">
-          Todo List
+          Assigned Tasks
         </h2>
 
         <hr className="border-t-1 border-white w-[90%] mx-auto mb-6" />
@@ -26,7 +26,7 @@ function Show(props) {
         {pendingTodos.length === 0 ? (
           <p className="text-center text-white pt-[60px]">🚫 No task assigned yet!</p>
         ) : (
-          <table className="min-w-full text-gray-700 table-auto border border-gray-300 rounded-md overflow-hidden">
+          <table className="min-w-full text-gray-700 table-auto border border-black rounded-md overflow-hidden">
             <thead>
               <tr className="bg-blue-500 text-left text-white">
                 <th className="px-6 py-3 border-b">Todo Title</th>
@@ -50,10 +50,18 @@ function Show(props) {
                       onClick={(e) => handleClick(e, value.id)}
                       className="inline-flex items-center gap-2 px-3 py-1"
                     >
-                      <input
-                        type="checkbox"
-                        className="accent-white w-4 h-4"
-                      />
+<input
+  type="checkbox"
+  className="
+    appearance-none 
+    w-5 h-7 
+    border-1 border-black rounded 
+    cursor-pointer 
+    hover:bg-white/30 hover:before:content-['✔'] 
+    hover:before:flex hover:before:items-center hover:before:justify-center hover:before:text-white 
+    checked:bg-white checked:before:content-['✔'] checked:before:text-black
+  "
+/>
                     </button>
                   </td>
                 </tr>
