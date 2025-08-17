@@ -4,7 +4,7 @@ const port = 3000
 
 app.use(express.json())
 
-// API section 
+
 app.post('/insert-user',(request, response) =>
 {
     console.log(`request received is = ${JSON.stringify(request.body)}`)
