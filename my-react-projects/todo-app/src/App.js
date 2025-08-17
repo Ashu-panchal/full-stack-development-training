@@ -15,7 +15,7 @@ import { Footer } from './Footer'
 function Home() {
   return (
 <div className="flex items-center justify-center min-h-screen text-center px-6">
-  <div className="max-w-3xl bg-black/50 p-6 rounded-2xl shadow-lg mb-[160px]">
+  <div className="max-w-3xl bg-black/15 p-6 rounded-2xl shadow-2xl mb-[160px]">
     
         <div className="text-left leading-none mb-6">
           <p className="text-white text-5xl tracking-widest">WHY<span className="text-2xl font-extrabold text-red-400">TASK</span></p>
@@ -65,7 +65,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />  {/* 👈 show paragraph on homepage */}
+          <Route path="/" element={<Home />} />
           <Route path="/Add" element={<Add todo={todo} setTodo={setTodo} />} />
           <Route path="/Show" element={<Show todo={todo} setTodo={setTodo}/>} />
           <Route path="/Done" element={<Done todo={todo} />} />
