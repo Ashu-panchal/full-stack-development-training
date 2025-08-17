@@ -10,7 +10,7 @@ app.post('/insert-user',(request, response) =>
     console.log(`request received is = ${JSON.stringify(request.body)}`)
     response.send('user inserted succesfully')
 })
-
+ 
 
 app.post('/insert-user-1', (request, response) => {
     console.log(`request receivced is  = ${JSON.stringify(request.body)}`)

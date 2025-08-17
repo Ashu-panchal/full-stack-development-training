@@ -15,7 +15,7 @@ function Done(props) {
         {completedTodos.length === 0 ? (
           <p className="text-center text-white mt-[80px]">🚫 No completed tasks yet.</p>
         ) : (
-          <table className="min-w-full text-black">
+          <table className="w-[720px] ml-[40px] text-black">
             <thead className="bg-blue-500 rounded-lg">
               <tr>
                 <th className="px-4 py-2  text-white">Todo Title</th>

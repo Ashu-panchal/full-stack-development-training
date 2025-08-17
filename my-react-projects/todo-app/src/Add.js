@@ -34,8 +34,8 @@ function Add({ todo, setTodo }) {
   return (
     <div>
       <div className="max-w-md w-full bg-white/30 backdrop-blur-md rounded-3xl shadow-2xl p-9 mb-[160px] ml-[635px]">
-        <h2 className="text-3xl font-extrabold text-center text-white drop-shadow-lg">
-          Add Todo
+        <h2 className="text-3xl font-extrabold text-center text-white drop-shadow-lg mb-[30px]">
+          Add Task
         </h2>
         <form onSubmit={handleSubmit} className="space-y-5">
           
@@ -46,7 +46,7 @@ function Add({ todo, setTodo }) {
               name="todoTitle"
               value={formData.todoTitle}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-full border border-white/30 bg-white/60 text-gray-800 placeholder-gray-500 shadow-md focus:outline-none focus:ring-2 focus:blue-red-700 transform transition duration-300 hover:scale-105"
+              className="w-full px-4 py-3 rounded-full border border-white/30 bg-white/60 text-blue-600 placeholder-gray-500 shadow-md focus:outline-none focus:ring-2 focus:blue-red-700 transform transition duration-300 hover:scale-105"
               placeholder="Enter todo title"
               required
             />
