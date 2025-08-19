@@ -5,7 +5,7 @@ function Done(props) {
 
   return (
     <div className="flex justify-center items-center min-h-screen">
-      <div className="w-[800px] h-[300px] bg-white/30 backdrop-blur-md rounded-3xl shadow-2xl mb-[170px] ml-[20px]">
+      <div className="w-[800px] h-[300px] bg-black/30 rounded-3xl shadow-2xl mb-[170px] ml-[20px]">
         <h2 className="text-2xl font-black mt-[20px] mb-6 text-center text-white">
           Completed Tasks
         </h2>

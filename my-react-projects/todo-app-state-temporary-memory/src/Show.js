@@ -16,12 +16,12 @@ function Show(props) {
 
   return (
     <div className="flex items-center justify-center min-h-screen">
-      <div className="w-[800px] h-[400px] bg-white/30 backdrop-blur-md rounded-3xl shadow-2xl mb-[170px] ml-[20px]">
+      <div className="w-[800px] h-[400px] bg-black/30 rounded-3xl shadow-2xl mb-[170px] ml-[20px]">
         <h2 className="text-3xl text:center font-extrabold mb-6 text-center text-white pt-[30px]">
           Assigned Tasks
         </h2>
 
-        <hr className="border-t-1 border-white w-[90%] mx-auto mb-[60px]" />
+        <hr className="border-t-1 border-white w-[90%] mx-auto mb-[20px]" />
 
         {pendingTodos.length === 0 ? (
           <p className="text-center text-white pt-[60px]">🚫 No task assigned yet!</p>
@@ -39,13 +39,12 @@ function Show(props) {
             <tbody>
               {pendingTodos.map((value) => (
                 <tr
-                  key={value.id}
-                  className="hover:bg-white"                >
-                  <td className="px-6 py-4 text-white border-b hover:bg-white">{value.todoTitle}</td>
-                  <td className="px-6 py-4 text-white border-b hover:bg-white">{value.dueDate}</td>
-                  <td className="px-6 py-4 text-white border-b hover:bg-white">{value.todoStatus}</td>
-                  <td className="px-6 py-4 text-white border-b text-center hover:bg-white">
-                    <button
+                  key={value.id}>
+                  <td className="px-6 py-4 text-black border-b bg-white">{value.todoTitle}</td>
+                  <td className="px-6 py-4 text-black border-b bg-white">{value.dueDate}</td>
+                  <td className="px-6 py-4 text-black border-b bg-white">{value.todoStatus}</td>
+                  <td className="px-6 py-4 text-black border-b text-center bg-white">
+                    <button 
                       onClick={(e) => handleClick(e, value.id)}
                       className="inline-flex items-center gap-2 px-3 py-1"
                     >

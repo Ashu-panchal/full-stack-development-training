@@ -1,14 +1,12 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {callCreateAPI, callGetAllAPI} from './BackedAPI'
 
 function Add({ todo, setTodo }) {
   const [formData, setFormData] = useState({
     todoTitle: "",
     dueDate: "",
-    todoStatus: ""
+    status: "pending" 
   });
-
-  const navigate = useNavigate();
 
   function handleChange(e) {
     let { name, value } = e.target;
@@ -18,42 +16,48 @@ function Add({ todo, setTodo }) {
     }));
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     const newTodo = {
-      id: todo.length + 1,
-      ...formData
+      todoId: Date.now().toString(),
+      todoTitle: formData.todoTitle,
+      dueDate: formData.dueDate,
+      status: formData.status
     };
 
-    setTodo([...todo, newTodo]);
-    setFormData({ todoTitle: "", dueDate: "", todoStatus: "" });
-    navigate("/Show");
+    await callCreateAPI("/create-todo", newTodo);
+
+    // get our todo again
+    const todoList = await callGetAllAPI('/read-todos');
+    setTodo(todoList);
+
+    setFormData({ todoTitle: "", dueDate: "", status: "pending" });
   }
 
   return (
     <div>
-      <div className="max-w-md w-full bg-white/30 backdrop-blur-md rounded-3xl shadow-2xl p-9 mb-[160px] ml-[635px]">
+      <div className="max-w-md w-full bg-black/30 rounded-3xl shadow-2xl p-9 mb-[220px] ml-[635px]">
         <h2 className="text-3xl font-extrabold text-center text-white drop-shadow-lg mb-[30px]">
           Add Task
         </h2>
         <form onSubmit={handleSubmit} className="space-y-5">
           
           <div className="max-w-sm mx-auto">
-            <label className="block font-medium mb-2 text-white">Todo Title</label>
+            <label className="block font-medium mb-2 text-gray-500">Todo Title</label>
             <input
               type="text"
               name="todoTitle"
               value={formData.todoTitle}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-full border border-white/30 bg-white/60 text-blue-600 placeholder-gray-500 shadow-md focus:outline-none focus:ring-2 focus:blue-red-700 transform transition duration-300 hover:scale-105"
+              className="w-full px-4 py-3 rounded-full border border-white/30 bg-white/60 text-blue-600 placeholder-gray-500 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-700 transform transition duration-300 hover:scale-105"
               placeholder="Enter todo title"
               required
             />
           </div>
 
           <div className="max-w-sm mx-auto">
-            <label className="block font-medium mb-2 text-white">Due Date</label>
+            <label className="block font-medium mb-2 text-gray-500">Due Date</label>
             <input
               type="date"
               name="dueDate"
@@ -61,18 +65,6 @@ function Add({ todo, setTodo }) {
               onChange={handleChange}
               className="w-full px-4 py-3 rounded-full border border-white/30 bg-white/60 text-gray-800 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-700 transform transition duration-300 hover:scale-105"
               required
-            />
-          </div>
-
-          <div className="max-w-sm mx-auto">
-            <label className="block font-medium mb-2 text-white">Status</label>
-            <input
-              type="text"
-              name="todoStatus"
-              value={formData.todoStatus}
-              onChange={handleChange}
-              className="w-full px-4 py-3 rounded-full border border-white/30 bg-white/60 text-gray-800 placeholder-gray-500 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-700 transform transition duration-300 hover:scale-105 mb-6"
-              placeholder="e.g., Pending"
             />
           </div>
 

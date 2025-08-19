@@ -1,21 +1,24 @@
 // without this, your app cannot remember tasks
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 //import important tools from react router library for navigation 
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-
-// below all are the pages which are imported in app.js
 import { Add } from "./Add";
 import { Show } from "./Show";
 import { Header } from "./Header";
 import { Done } from './Done.js';
 import { Footer } from './Footer'
+import {callGetAllAPI} from './BackedAPI.js'
 
-// Home component for the paragraph
+async function fetchTodos(setTodo){
+  const todoList = await callGetAllAPI('/read-todos');
+  setTodo(todoList);
+}
+
 function Home() {
   return (
 <div className="flex items-center justify-center min-h-screen text-center px-6">
-  <div className="max-w-3xl bg-black/15 p-6 rounded-2xl shadow-2xl mb-[160px]">
+  <div className="max-w-3xl bg-black/30 p-6 rounded-2xl shadow-2xl mb-[160px]">
     
         <div className="text-left leading-none mb-6">
           <p className="text-white text-5xl tracking-widest">WHY<span className="text-2xl font-extrabold text-red-400">TASK</span></p>
@@ -50,18 +53,24 @@ function Home() {
   );
 }
 
-// This defines your main app component. Everything inside will run when your app starts
 function App() {
   let [todo, setTodo] = useState([]);
 
+  useEffect(() => {
+    fetchTodos(setTodo)
+  }, []);
+
   return (
-    <div
-      className="flex flex-col min-h-screen justify-between"
-      style={{
-        backgroundImage:
-          "url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/8a97c0106861523.5f9994f295d27.jpg')",
-      }}
-    >
+<div
+  className="flex flex-col min-h-screen justify-between"
+  style={{
+    backgroundImage:
+      "url('https://png.pngtree.com/png-clipart/20240727/original/pngtree-seamless-ultra-high-resolution-image-small-river-rocks-texture-as-background-png-image_15649572.png')",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
+>
       <BrowserRouter>
         <Header />
         <Routes>
